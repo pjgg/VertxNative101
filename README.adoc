@@ -1,0 +1,24 @@
+# Compile and create a docker native image
+
+```shell script
+docker build -f src/main/docker/Dockerfile.build -t vertx-quickstart/getting-started .
+```
+
+Run your image
+
+```shell script
+docker run --rm -p 8888:8888 vertx-quickstart/getting-started
+```
+
+Check stats
+
+```shell script
+CONTAINER ID   NAME              CPU %     MEM USAGE / LIMIT     MEM %     NET I/O       BLOCK I/O   PIDS
+c30c922fca8f   festive_khorana   0.00%     4.098MiB / 31.14GiB   0.01%     4.34kB / 0B   0B / 0B     5
+```
+
+And you could make a curl
+
+```shell script
+curl -v http://localhost:8888
+```
